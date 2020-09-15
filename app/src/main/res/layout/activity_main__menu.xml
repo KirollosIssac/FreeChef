@@ -9,7 +9,7 @@
     <Button
         android:id="@+id/dishes"
         android:layout_width="205dp"
-        android:layout_height="220dp"
+        android:layout_height="200dp"
         android:fontFamily="serif-monospace"
         android:text="Dishes"
         android:textSize="24sp"
@@ -23,7 +23,7 @@
     <Button
         android:id="@+id/recieveddishes"
         android:layout_width="205dp"
-        android:layout_height="220dp"
+        android:layout_height="200dp"
         android:fontFamily="serif-monospace"
         android:text="Recieved Dishes"
         android:textSize="24sp"
@@ -37,7 +37,7 @@
     <Button
         android:id="@+id/logout"
         android:layout_width="205dp"
-        android:layout_height="220dp"
+        android:layout_height="200dp"
         android:fontFamily="serif-monospace"
         android:text="Logout"
         android:textSize="24sp"
@@ -50,7 +50,7 @@
 
     <Button
         android:layout_width="205dp"
-        android:layout_height="220dp"
+        android:layout_height="200dp"
         android:fontFamily="serif-monospace"
         android:text="Order Dish"
         android:textSize="24sp"
@@ -64,7 +64,7 @@
     <Button
         android:id="@+id/profile"
         android:layout_width="205dp"
-        android:layout_height="220dp"
+        android:layout_height="200dp"
         android:fontFamily="serif-monospace"
         android:text="Profile"
         android:textSize="24sp"
@@ -78,15 +78,15 @@
     <Button
         android:id="@+id/orders"
         android:layout_width="205dp"
-        android:layout_height="220dp"
+        android:layout_height="200dp"
         android:fontFamily="serif-monospace"
         android:text="Orders"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.004"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.496" />
+        app:layout_constraintVertical_bias="0.464" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
