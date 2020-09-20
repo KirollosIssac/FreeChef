@@ -20,6 +20,7 @@ public class Main_Menu extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(Main_Menu.this,Dishes_Menu.class);
                 startActivity(intent);
+                //sdcdcdscdscdscdsdscdcds
             }
         });
     }
