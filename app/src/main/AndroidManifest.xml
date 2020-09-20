@@ -8,17 +8,22 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".Main_Menu"></activity>
-        <activity android:name=".Sign_Up" />
-        <activity android:name=".Sign_In" />
-        <activity android:name=".Welcome">
+        android:theme="@style/Theme.AppCompat.NoActionBar">
+        <activity android:name=".Dishes_Menu"></activity>
+        <activity android:name=".List" />
+        <activity android:name=".Edit_Dish" />
+        <activity android:name=".Add_Dish" />
+        <activity android:name=".Main_Menu">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Older_Orders" />
+        <activity android:name=".Sign_Up" />
+        <activity android:name=".Sign_In" />
+        <activity android:name=".Welcome" />
 
         <meta-data
             android:name="preloaded_fonts"
