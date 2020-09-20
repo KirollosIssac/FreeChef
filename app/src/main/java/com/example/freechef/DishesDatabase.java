@@ -14,7 +14,7 @@ import java.io.ByteArrayOutputStream;
 
 public class DishesDatabase extends SQLiteOpenHelper {
 
-    private static String Databasename = "DishesDatabasee";
+    private static String Databasename = "DishesDatabase";
     private String DishCreation="create table dishes"+"( id integer primary key autoincrement," + "userid text not null , Name text not null , Description text not null , Price text not null , Rate text not null , img blob not null)";
 
     SQLiteDatabase db;
@@ -52,7 +52,7 @@ public class DishesDatabase extends SQLiteOpenHelper {
     public Cursor FetchAllDishes()
     {
         db=getReadableDatabase();
-        String[] row={ "userid" , "Name" , "Description" , "Price" , "Rate" , "img"};
+        String[] row={"id","userid" , "Name" , "Description" , "Price" , "Rate" , "img"};
 
         Cursor cursor=db.query("dishes",row,null,null,null,null,null);
 
@@ -79,20 +79,23 @@ public class DishesDatabase extends SQLiteOpenHelper {
         return cursor;
 
     }
-    public Dish Returndish_dishid (String id) {
+    public Dish Returndish_dishid (int id) {
 
         db=getReadableDatabase();
-
-        String selectQuery = "SELECT Name,Description,Price,Rate,img from dishes where userid = " + id;
-        Cursor cursor = db.rawQuery(selectQuery, null);
-
-        if(cursor!=null)
+        Dish d=null;
+        Cursor c=FetchAllDishes();
+        while(!(c.isAfterLast()))
         {
-            cursor.moveToFirst();
+            int i=Integer.parseInt(c.getString(0));
+            if(i==id)
+            {
+                d=new Dish(c.getString(1),c.getString(2),c.getString(3),c.getString(4),c.getString(5),c.getBlob(6));
+                break;
+            }
+            c.moveToNext();
         }
         db.close();
-        return (new Dish(cursor.getString(0),cursor.getString(1),cursor.getString(2),cursor.getString(3),cursor.getString(4),cursor.getBlob(5)));
-
+        return d;
     }
 
 

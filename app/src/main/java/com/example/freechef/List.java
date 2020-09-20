@@ -41,8 +41,8 @@ public class List extends AppCompatActivity {
 
         while(!(cursor.isAfterLast()))
         {
-            byte[] photo=cursor.getBlob(5);
-            dishesList.add(new Dish(cursor.getString(0),cursor.getString(1),cursor.getString(2),cursor.getString(3),cursor.getString(4),photo));
+            byte[] photo=cursor.getBlob(6);
+            dishesList.add(new Dish(cursor.getString(1),cursor.getString(2),cursor.getString(3),cursor.getString(4),cursor.getString(5),photo));
             cursor.moveToNext();
         }
 
@@ -68,7 +68,7 @@ public class List extends AppCompatActivity {
         if(item.getItemId()==R.id.editDish)
         {
             Intent i=new Intent(List.this,Edit_Dish.class);
-            Dish d=dish.Returndish_dishid(String.valueOf(select));
+            Dish d=dish.Returndish_dishid(select);
             String name=d.getName();
             String des=d.getDescription();
             String price=d.getPrice();

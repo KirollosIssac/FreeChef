@@ -38,6 +38,8 @@ public class Edit_Dish extends AppCompatActivity {
         img=(ImageView)findViewById(R.id.photo);
 
         final DishesDatabase database = new DishesDatabase(this);
+
+
         name.setText(getIntent().getExtras().getString("Name"));
         des.setText(getIntent().getExtras().getString("des"));
         price.setText(getIntent().getExtras().getString("price"));
