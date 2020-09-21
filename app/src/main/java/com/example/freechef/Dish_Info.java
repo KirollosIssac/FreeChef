@@ -17,7 +17,7 @@ public class Dish_Info extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dish__info);
-        final int Dish_ID = Integer.parseInt(getIntent().getExtras().getString("Dish_ID"));
+        final int Dish_ID = getIntent().getExtras().getInt("Dish_ID");
         DishesDatabase database = new DishesDatabase(this);
         final OrdersDatabase new_order = new OrdersDatabase(this);
         final Dish Dish_Selected = database.Returndish_dishid(Dish_ID);
