@@ -46,7 +46,7 @@ public class Dish_Info extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Dish_Quantity.setText(String.valueOf(Integer.parseInt(Dish_Quantity.getText().toString())+1));
-                Dish_Price.setText(Integer.parseInt(Dish_Selected.getPrice())*Integer.parseInt(Dish_Quantity.getText().toString()));
+                Dish_Price.setText(String.valueOf(Integer.parseInt(Dish_Selected.getPrice())*Integer.parseInt(Dish_Quantity.getText().toString())));
             }
         });
 
@@ -60,7 +60,7 @@ public class Dish_Info extends AppCompatActivity {
                 else
                 {
                     Dish_Quantity.setText(String.valueOf(Integer.parseInt(Dish_Quantity.getText().toString())-1));
-                    Dish_Price.setText(Integer.parseInt(Dish_Selected.getPrice())*Integer.parseInt(Dish_Quantity.getText().toString()));
+                    Dish_Price.setText(String.valueOf(Integer.parseInt(Dish_Selected.getPrice())*Integer.parseInt(Dish_Quantity.getText().toString())));
                 }
             }
         });
