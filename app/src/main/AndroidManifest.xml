@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".Dishes_Menu"></activity>
+        <activity android:name=".Dish_Info"></activity>
+        <activity android:name=".All_Dishes_Menu" />
+        <activity android:name=".Dishes_Menu" />
         <activity android:name=".List" />
         <activity android:name=".Edit_Dish" />
         <activity android:name=".Add_Dish" />
@@ -20,7 +22,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Older_Orders" />
         <activity android:name=".Sign_Up" />
         <activity android:name=".Sign_In" />
         <activity android:name=".Welcome" />

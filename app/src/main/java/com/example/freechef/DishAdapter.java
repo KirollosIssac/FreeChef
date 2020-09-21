@@ -48,7 +48,7 @@ public class DishAdapter extends ArrayAdapter<Dish> {
         TextView rate = (TextView) listItem.findViewById(R.id.Item_Rate);
         rate.setText(currentDish.getRate());
 
-        ImageView image = (ImageView)listItem.findViewById(R.id.Item_Image);
+        ImageView image = (ImageView)listItem.findViewById(R.id.Dish_Image);
         Bitmap bmp= BitmapFactory.decodeByteArray(currentDish.getImage(), 0 , currentDish.getImage().length);
         image.setImageBitmap(bmp);
 
