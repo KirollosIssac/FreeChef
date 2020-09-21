@@ -14,7 +14,7 @@ import java.io.ByteArrayOutputStream;
 
 public class DishesDatabase extends SQLiteOpenHelper {
 
-    private static String Databasename = "DishesDatabase";
+    private static String Databasename = "D4";
     private String DishCreation="create table dishes"+"( id integer primary key autoincrement," + "userid text not null , Name text not null , Description text not null , Price text not null , Rate text not null , img blob not null)";
 
     SQLiteDatabase db;
@@ -101,6 +101,7 @@ public class DishesDatabase extends SQLiteOpenHelper {
 
     public void Edit_Dish(String old_name,String Nname,String Ndes,String Nprice,String Nrate,byte[] Nimg)
     {
+        Nimg=imagemTratada(Nimg);
         db=getWritableDatabase();
         ContentValues row=new ContentValues();
         row.put("Name",Nname);
