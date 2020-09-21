@@ -45,7 +45,8 @@ public class All_Dishes_Menu extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(All_Dishes_Menu.this,Dish_Info.class);
-                intent.putExtra("Dish_ID",i+1);
+                i++;
+                intent.putExtra("Dish_ID",i);
                 startActivity(intent);
             }
         });
