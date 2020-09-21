@@ -16,6 +16,7 @@ public class Main_Menu extends AppCompatActivity {
 
         Button Dishes = (Button)findViewById(R.id.dishes);
         Button Order_Dish=(Button)findViewById(R.id.Order_Dish);
+        Button Orders =(Button)findViewById(R.id.orders);
 
         Dishes.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -29,6 +30,14 @@ public class Main_Menu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i=new Intent(Main_Menu.this,All_Dishes_Menu.class);
+                startActivity(i);
+            }
+        });
+
+        Orders.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i=new Intent(Main_Menu.this,User_Outcoming_Orders_History.class);
                 startActivity(i);
             }
         });

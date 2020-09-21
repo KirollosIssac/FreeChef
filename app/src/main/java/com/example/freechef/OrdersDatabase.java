@@ -42,6 +42,14 @@ public class OrdersDatabase extends SQLiteOpenHelper {
         db.close();
     }
 
+    public void DeleteOrder(int id)
+    {
+        db=getWritableDatabase();
+        db.delete("orders","id'"+id+"'",null);
+        db.close();
+    }
+
+
     public Cursor Return_to_user (String userid) {
 
         db=getReadableDatabase();
@@ -72,5 +80,38 @@ public class OrdersDatabase extends SQLiteOpenHelper {
         db.close();
         return cursor;
 
+    }
+    public Cursor FetchAllOrders()
+    {
+        db=getReadableDatabase();
+        String[] row={"id","touser" , "dish" , "fromuser" , "quantity" , "price"};
+
+        Cursor cursor=db.query("orders",row,null,null,null,null,null);
+
+        if(cursor!=null)
+        {
+            cursor.moveToFirst();
+        }
+        db.close();
+        return cursor;
+    }
+
+    public Order Return_Order_byId(int id)
+    {
+        db=getReadableDatabase();
+        Order order = null;
+        Cursor cursor = FetchAllOrders();
+        while(!(cursor.isAfterLast()))
+        {
+            int i=Integer.parseInt(cursor.getString(0));
+            if(i==id)
+            {
+                 order =new Order(cursor.getString(1),cursor.getString(3),cursor.getString(2),cursor.getString(4),cursor.getString(5));
+                break;
+            }
+            cursor.moveToNext();
+        }
+        db.close();
+        return order;
     }
 }

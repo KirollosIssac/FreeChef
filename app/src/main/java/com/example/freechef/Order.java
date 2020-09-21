@@ -4,15 +4,15 @@ public class Order {
 
     private String touser;
     private String fromuser;
-    private Dish dish;
+    private String dish_id;
     private String quantity;
     private String price;
 
-    public Order(String touser, String fromuser, Dish dish, String quantity, String price) {
+    public Order(String touser, String fromuser, String dish_id, String quantity, String price) {
 
         this.touser = touser;
         this.fromuser = fromuser;
-        this.dish = dish;
+        this.dish_id = dish_id;
         this.quantity = quantity;
         this.price = price;
     }
@@ -33,12 +33,12 @@ public class Order {
         this.fromuser = fromuser;
     }
 
-    public Dish getDish() {
-        return dish;
+    public String getDish() {
+        return dish_id;
     }
 
-    public void setDish(Dish dish) {
-        this.dish = dish;
+    public void setDish(String dish_id) {
+        this.dish_id = dish_id;
     }
 
     public String getQuantity() {
