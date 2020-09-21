@@ -14,13 +14,22 @@ public class Main_Menu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main__menu);
 
-        Button x = (Button)findViewById(R.id.dishes);
-        x.setOnClickListener(new View.OnClickListener() {
+        Button Dishes = (Button)findViewById(R.id.dishes);
+        Button Order_Dish=(Button)findViewById(R.id.Order_Dish);
+
+        Dishes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Main_Menu.this,Dishes_Menu.class);
                 startActivity(intent);
-                //sdcdcdscdscdscdsdscdcds
+            }
+        });
+
+        Order_Dish.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i=new Intent(Main_Menu.this,All_Dishes_Menu.class);
+                startActivity(i);
             }
         });
     }
