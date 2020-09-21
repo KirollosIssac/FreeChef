@@ -7,18 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".List">
 
-    <View
-        android:id="@+id/click"
-        android:layout_width="wrap_content"
-        android:layout_height="120dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="1dp"
-        android:layout_marginLeft="1dp"
-        android:layout_marginTop="-3dp"
-        android:clickable="true" />
-
     <ImageView
         android:id="@+id/Dish_Image"
         android:layout_width="117dp"

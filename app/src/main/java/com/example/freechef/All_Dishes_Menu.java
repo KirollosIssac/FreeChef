@@ -2,9 +2,11 @@ package com.example.freechef;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -14,6 +16,7 @@ public class All_Dishes_Menu extends AppCompatActivity {
     ArrayList<Dish> dishesList;
     Cursor cursor;
     Dish s;
+    DishesDatabase database = new DishesDatabase(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +28,6 @@ public class All_Dishes_Menu extends AppCompatActivity {
 
         dishesList= new ArrayList<>();
 
-        DishesDatabase database = new DishesDatabase(this);
         cursor= database.FetchAllDishes();
 
         while(!(cursor.isAfterLast()))
@@ -38,13 +40,15 @@ public class All_Dishes_Menu extends AppCompatActivity {
         DishAdapter dish_adapter = new DishAdapter(this,dishesList);
         list_view.setAdapter(dish_adapter);
 
-        View On_Click = (View)findViewById(R.id.click);
+        list_view.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
-        On_Click.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(All_Dishes_Menu.this,Dish_Info.class);
+                intent.putExtra("Dish_ID",i);
+                startActivity(intent);
             }
         });
+
     }
 }
