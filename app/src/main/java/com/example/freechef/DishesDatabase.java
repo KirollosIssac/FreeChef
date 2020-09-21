@@ -14,7 +14,7 @@ import java.io.ByteArrayOutputStream;
 
 public class DishesDatabase extends SQLiteOpenHelper {
 
-    private static String Databasename = "D4";
+    private static String Databasename = "D";
     private String DishCreation="create table dishes"+"( id integer primary key autoincrement," + "userid text not null , Name text not null , Description text not null , Price text not null , Rate text not null , img blob not null)";
 
     SQLiteDatabase db;
