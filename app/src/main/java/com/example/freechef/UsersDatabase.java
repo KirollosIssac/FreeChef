@@ -47,6 +47,21 @@ public class UsersDatabase  extends SQLiteOpenHelper {
         db.close();
     }
 
+    public void EditUser(String firstname, String secondname, String username, String email, String password, String gender, String date, String phone) {
+
+        db = getWritableDatabase();
+        ContentValues c = new ContentValues();
+        c.put("firstname", firstname);
+        c.put("secondname", secondname);
+        c.put("username", username);
+        c.put("email", email);
+        c.put("password", password);
+        c.put("gender", gender);
+        c.put("dateofbirth", date);
+        c.put("phone", phone);
+        db.update("users", c, "username like?", new String[]{username});
+        db.close();
+    }
 
 
     public Pair<Cursor,Cursor> Returnalluser () {
@@ -73,5 +88,38 @@ public class UsersDatabase  extends SQLiteOpenHelper {
         return (new Pair(usernames,emails));
 
     }
-    
+    public Cursor FetchAllusers() {
+
+        db = getReadableDatabase();
+        String [] row = {"username", "password", "firstname"};
+
+        Cursor cursor = db.query("users", row , null, null, null, null, null);
+
+        if (cursor != null) {
+            cursor.moveToFirst();
+        }
+        this.db.close();
+        return cursor;
+    }
+
+    public User Fetchuser(String id) {
+        db = getReadableDatabase();
+        String [] row ={"firstname", "secondname", "username", "email", "password", "phone", "gender", "dateofbirth"} ;
+
+        Cursor cursor = db.query("users", row , null, null, null, null, null);
+        if (cursor != null) {
+            cursor.moveToFirst();
+        }
+        db.close();
+
+        while (!cursor.isAfterLast()) {
+            if (cursor.getString(2).equals(id)) {
+                return new User(cursor.getString(0), cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5), cursor.getString(6), cursor.getString(7));
+            }
+            cursor.moveToNext();
+        }
+        String str = id;
+        return new User(null, null, null, null, null, null, null, null);
+    }
+
 }

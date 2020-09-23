@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".Order_Details"></activity>
+        <activity android:name=".Edit_Profile"></activity>
+        <activity android:name=".Profile" />
+        <activity android:name=".Order_Details" />
         <activity android:name=".User_Outcoming_Orders_History" />
         <activity android:name=".Dish_Info" />
         <activity android:name=".All_Dishes_Menu" />
@@ -17,16 +19,16 @@
         <activity android:name=".List" />
         <activity android:name=".Edit_Dish" />
         <activity android:name=".Add_Dish" />
-        <activity android:name=".Main_Menu">
+        <activity android:name=".Main_Menu"/>
+        <activity android:name=".Sign_Up" />
+        <activity android:name=".Sign_In" />
+        <activity android:name=".Welcome" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Sign_Up" />
-        <activity android:name=".Sign_In" />
-        <activity android:name=".Welcome" />
 
         <meta-data
             android:name="preloaded_fonts"

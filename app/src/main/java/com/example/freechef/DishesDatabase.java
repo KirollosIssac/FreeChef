@@ -14,7 +14,7 @@ import java.io.ByteArrayOutputStream;
 
 public class DishesDatabase extends SQLiteOpenHelper {
 
-    private static String Databasename = "D";
+    private static String Databasename = "DDD";
     private String DishCreation="create table dishes"+"( id integer primary key autoincrement," + "userid text not null , Name text not null , Description text not null , Price text not null , Rate text not null , img blob not null)";
 
     SQLiteDatabase db;
@@ -65,7 +65,6 @@ public class DishesDatabase extends SQLiteOpenHelper {
     }
 
     public Cursor Returndish_userid (String id) {
-
         db=getReadableDatabase();
 
         String selectQuery = "SELECT Name,Description,Price,Rate,img from dishes where userid = " + id;
@@ -77,8 +76,8 @@ public class DishesDatabase extends SQLiteOpenHelper {
         }
         db.close();
         return cursor;
-
     }
+
     public Dish Returndish_dishid (int id) {
 
         db=getReadableDatabase();
@@ -96,6 +95,7 @@ public class DishesDatabase extends SQLiteOpenHelper {
         }
         db.close();
         return d;
+
     }
 
 
@@ -112,6 +112,8 @@ public class DishesDatabase extends SQLiteOpenHelper {
         db.update("dishes",row,"Name like?",new String[]{old_name});
         db.close();
     }
+
+
     private byte[] imagemTratada(byte[] imagem_img)
     {
         while (imagem_img.length > 500000)
@@ -119,10 +121,9 @@ public class DishesDatabase extends SQLiteOpenHelper {
             Bitmap bitmap = BitmapFactory.decodeByteArray(imagem_img, 0, imagem_img.length);
             Bitmap resized = Bitmap.createScaledBitmap(bitmap, (int)(bitmap.getWidth()*0.8), (int)(bitmap.getHeight()*0.8), true);
             ByteArrayOutputStream stream = new ByteArrayOutputStream();
-            resized.compress(Bitmap.CompressFormat.PNG, 100, stream);
+            resized.compress(Bitmap.CompressFormat.JPEG, 100, stream);
             imagem_img = stream.toByteArray();
         }
         return imagem_img;
     }
-
 }

@@ -32,6 +32,8 @@ public class List extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu);
 
+        final String user = getIntent().getExtras().getString("ID");
+
         ListView list_view = (ListView)findViewById(R.id.Main_Menu);
 
         dishesList= new ArrayList<>();

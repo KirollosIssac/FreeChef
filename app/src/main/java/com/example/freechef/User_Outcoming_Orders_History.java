@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 public class User_Outcoming_Orders_History extends AppCompatActivity {
 
-    String Log_in_User = "";// moamen
+    String Log_in_User;
     ArrayList<Dish> dishesList;
     ArrayList<Order> ordersList;
     Cursor cursor;
@@ -26,6 +26,8 @@ public class User_Outcoming_Orders_History extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu);
+
+        Log_in_User = getIntent().getExtras().getString("ID");
 
         ListView list_view = (ListView)findViewById(R.id.Main_Menu);
 

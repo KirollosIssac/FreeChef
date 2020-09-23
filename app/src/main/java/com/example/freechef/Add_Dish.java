@@ -36,6 +36,9 @@ public class Add_Dish extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add__dish);
+
+        final  String user = getIntent().getExtras().getString("ID");
+
         add_dish = (Button)findViewById(R.id.adddish);
         add_photo = (Button)findViewById(R.id.addphoto);
         name = (TextView)findViewById(R.id.dishname);
@@ -64,10 +67,7 @@ public class Add_Dish extends AppCompatActivity {
                     Bitmap bitmap = drawable.getBitmap();
                     byte [] arr = getBitmapAsByteArray(bitmap);
 
-                    ///// EL USERR ID YA 3'ABY ////
-
-
-                    Dish.AddDishes("" ,name.getText().toString(),desc.getText().toString(),price.getText().toString(),"5",arr);
+                    Dish.AddDishes(user ,name.getText().toString(),desc.getText().toString(),price.getText().toString(),"5",arr);
                     Toast.makeText(getApplicationContext()," Dish added successfully ",Toast.LENGTH_SHORT).show();
                 }
                 else {
@@ -79,7 +79,7 @@ public class Add_Dish extends AppCompatActivity {
 
     public static byte[] getBitmapAsByteArray(Bitmap bitmap) {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.PNG, 0, outputStream);
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 0, outputStream);
         return outputStream.toByteArray();
     }
 

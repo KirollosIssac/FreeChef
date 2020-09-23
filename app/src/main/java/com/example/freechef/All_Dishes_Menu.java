@@ -23,6 +23,7 @@ public class All_Dishes_Menu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu);
 
+        final String user = getIntent().getExtras().getString("ID");
 
         ListView list_view = (ListView)findViewById(R.id.Main_Menu);
 
@@ -45,6 +46,7 @@ public class All_Dishes_Menu extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(All_Dishes_Menu.this,Dish_Info.class);
+                intent.putExtra("ID" , user);
                 i++;
                 intent.putExtra("Dish_ID",i);
                 startActivity(intent);
