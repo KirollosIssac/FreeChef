@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Profile">
+
+    <TextView android:id="@+id/p1"
+        android:layout_width="114dp" android:layout_height="32dp" android:layout_marginLeft="25dp" android:layout_marginTop="29dp" android:text="First Name         :" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+    <TextView android:id="@+id/p5"
+        android:layout_width="114dp" android:layout_height="32dp" android:layout_marginLeft="26dp" android:layout_marginTop="288dp" android:text="Phone Number  :" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+    <TextView android:id="@+id/p3"
+        android:layout_width="114dp" android:layout_height="32dp" android:layout_marginLeft="25dp" android:layout_marginTop="155dp" android:text="Username           :" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+    <TextView android:id="@+id/p2"
+        android:layout_width="114dp" android:layout_height="32dp" android:layout_marginLeft="25dp" android:layout_marginTop="92dp" android:text="Last Name          :" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+    <TextView android:id="@+id/p4"
+        android:layout_width="114dp" android:layout_height="32dp" android:layout_marginLeft="25dp" android:layout_marginTop="220dp" android:text="Email                   :" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+    <TextView android:id="@+id/p6"
+        android:layout_width="114dp" android:layout_height="32dp" android:layout_marginLeft="27dp" android:layout_marginTop="352dp" android:text="Gender                :" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+    <TextView android:id="@+id/p7"
+        android:layout_width="112dp" android:layout_height="32dp" android:layout_marginLeft="31dp" android:layout_marginTop="415dp" android:text="Date of Birth      :" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+
+    <TextView android:id="@+id/profile_firstname" android:layout_width="250dp" android:layout_height="30dp" android:layout_marginLeft="151dp" android:layout_marginTop="30dp" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+    <TextView android:id="@+id/profile_secondname"
+        android:layout_width="249dp" android:layout_height="33dp" android:layout_marginLeft="151dp" android:layout_marginTop="92dp" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+    <TextView android:id="@+id/profile_dateofbirth" android:layout_width="248dp" android:layout_height="32dp" android:layout_marginLeft="154dp" android:layout_marginTop="415dp" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+    <TextView android:id="@+id/profile_gender" android:layout_width="251dp" android:layout_height="33dp" android:layout_marginLeft="151dp" android:layout_marginTop="352dp" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+    <TextView android:id="@+id/profile_phonenumber" android:layout_width="251dp" android:layout_height="34dp" android:layout_marginLeft="151dp" android:layout_marginTop="287dp" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+    <TextView android:id="@+id/profile_email" android:layout_width="251dp" android:layout_height="34dp" android:layout_marginLeft="151dp" android:layout_marginTop="219dp" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+    <TextView android:id="@+id/profile_username" android:layout_width="251dp" android:layout_height="33dp" android:layout_marginLeft="150dp" android:layout_marginTop="154dp" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+
+    <Button
+        android:id="@+id/profile_edit"
+        android:layout_width="143dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="131dp"
+        android:layout_marginTop="527dp"
+        android:text="Edit" />
+</RelativeLayout>
