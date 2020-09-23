@@ -84,6 +84,24 @@ public class DishesDatabase extends SQLiteOpenHelper {
         return d;
     }
 
+    public Dish Returndish_Dishid (String dishId) {
+
+        db=getReadableDatabase();
+        Dish d=null;
+        Cursor c=FetchAllDishes();
+        while(!(c.isAfterLast()))
+        {
+            if(dishId.equals(c.getString(0)))
+            {
+                d=new Dish(c.getString(1),c.getString(2),c.getString(3),c.getString(4),c.getString(5),c.getBlob(6));
+                break;
+            }
+            c.moveToNext();
+        }
+        db.close();
+        return d;
+    }
+
     public int Returned_DishID (String name,String des,String price) {
 
         db=getReadableDatabase();

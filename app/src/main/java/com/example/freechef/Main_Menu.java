@@ -20,7 +20,7 @@ public class Main_Menu extends AppCompatActivity {
         Button Dishes = (Button)findViewById(R.id.dishes);
         Button Order_Dish=(Button)findViewById(R.id.Order_Dish);
         Button Orders =(Button)findViewById(R.id.orders);
-
+        Button recived = (Button)findViewById(R.id.recieveddishes);
         Button logout = (Button) findViewById(R.id.logout);
         Button profile = (Button) findViewById(R.id.profile);
 
@@ -28,6 +28,15 @@ public class Main_Menu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Main_Menu.this,Dishes_Menu.class);
+                intent.putExtra("ID" , o);
+                startActivity(intent);
+            }
+        });
+
+        recived.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Main_Menu.this,Received_Dishes.class);
                 intent.putExtra("ID" , o);
                 startActivity(intent);
             }

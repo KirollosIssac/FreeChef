@@ -22,8 +22,6 @@ public class User_Outcoming_Orders_History extends AppCompatActivity {
     ArrayList<Dish> dishesList;
     ArrayList<Order> ordersList;
     Cursor cursor;
-    Dish current_dish;
-    Order current_order;
     DishesDatabase Dishesdatabase;
     OrdersDatabase Ordersdatabase;
 
@@ -54,7 +52,7 @@ public class User_Outcoming_Orders_History extends AppCompatActivity {
 
         for(int i=0;i<ordersList.size();i++)
         {
-            dishesList.add(Dishesdatabase.Returndish_userid(ordersList.get(i).getFromuser()));
+            dishesList.add(Dishesdatabase.Returndish_Dishid(ordersList.get(i).getDish()));
         }
 
         DishAdapter dish_adapter = new DishAdapter(this,dishesList);
