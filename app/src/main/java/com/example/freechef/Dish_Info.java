@@ -78,7 +78,7 @@ public class Dish_Info extends AppCompatActivity {
         Order_Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int Dish_ID = database.Returned_DishID(Name,Des,Price,arr);
+                int Dish_ID = database.Returned_DishID(Name,Des,Price );
                 new_order.AddOrder(user,String.valueOf(Dish_ID),Dish_Selected.getUserid(),Dish_Quantity.getText().toString(),Dish_Price.getText().toString());
                 Toast.makeText(getApplicationContext(),"Order Confirmed",Toast.LENGTH_SHORT).show();
             }

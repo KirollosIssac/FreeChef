@@ -91,6 +91,8 @@ public class List extends AppCompatActivity {
             String des=d.getDescription();
             String price=d.getPrice();
             byte[]arr2=d.getImage();
+            int id = dish.Returned_DishID(name , des , price );
+            i.putExtra("dishid" , id);
             i.putExtra("Name",name);
             i.putExtra("des",des);
             i.putExtra("price",price);

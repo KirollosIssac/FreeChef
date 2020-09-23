@@ -15,7 +15,7 @@ import java.util.Arrays;
 
 public class DishesDatabase extends SQLiteOpenHelper {
 
-    private static String Databasename = "DDD";
+    private static String Databasename = "DDDD";
     private String DishCreation="create table dishes"+"( id integer primary key autoincrement," + "userid text not null , Name text not null , Description text not null , Price text not null , Rate text not null , img blob not null)";
 
     SQLiteDatabase db;
@@ -84,7 +84,7 @@ public class DishesDatabase extends SQLiteOpenHelper {
         return d;
     }
 
-    public int Returned_DishID (String name,String des,String price,byte[]image) {
+    public int Returned_DishID (String name,String des,String price) {
 
         db=getReadableDatabase();
         Dish d=null;
@@ -102,6 +102,7 @@ public class DishesDatabase extends SQLiteOpenHelper {
         db.close();
         return i;
     }
+
     public Dish Returndish_dishid (String name,String des,String price,byte[]image) {
 
         db=getReadableDatabase();
@@ -122,7 +123,7 @@ public class DishesDatabase extends SQLiteOpenHelper {
     }
 
 
-    public void Edit_Dish(String old_name,String Nname,String Ndes,String Nprice,String Nrate,byte[] Nimg)
+    public void Edit_Dish(int id , String old_name,String Nname,String Ndes,String Nprice,String Nrate,byte[] Nimg)
     {
         Nimg=imagemTratada(Nimg);
         db=getWritableDatabase();
@@ -132,7 +133,7 @@ public class DishesDatabase extends SQLiteOpenHelper {
         row.put("Price",Nprice);
         row.put("Rate",Nrate);
         row.put("img",Nimg);
-        db.update("dishes",row,"Name like?",new String[]{old_name});
+        db.update("dishes", row, "id= " + String.valueOf(id) , null);
         db.close();
     }
 

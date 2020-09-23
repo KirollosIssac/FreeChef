@@ -28,7 +28,7 @@ public class Order_Details extends AppCompatActivity {
         DishesDatabase Dishesdatabase = new DishesDatabase(this);
         final OrdersDatabase Ordersdatabase = new OrdersDatabase(this);
 
-        final int DishID=Dishesdatabase.Returned_DishID( Name,Des,Price,arr);
+        final int DishID=Dishesdatabase.Returned_DishID( Name,Des,Price);
 
 
 

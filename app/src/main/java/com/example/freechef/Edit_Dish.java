@@ -43,6 +43,7 @@ public class Edit_Dish extends AppCompatActivity {
         name.setText(getIntent().getExtras().getString("Name"));
         des.setText(getIntent().getExtras().getString("des"));
         price.setText(getIntent().getExtras().getString("price"));
+        final int dishid = getIntent().getExtras().getInt("dishid");
 
         final byte[]arr3=getIntent().getExtras().getByteArray("image");
         Bitmap bmp = BitmapFactory.decodeByteArray(arr3, 0, arr3.length);
@@ -61,7 +62,7 @@ public class Edit_Dish extends AppCompatActivity {
                 String n=name.getText().toString();
                 String d=des.getText().toString();
                 String p=price.getText().toString();
-                database.Edit_Dish(getIntent().getExtras().getString("Name"),n,d,p,"5",arr);
+                database.Edit_Dish( dishid , getIntent().getExtras().getString("Name"),n,d,p,"5",arr);
                 Toast.makeText(getApplicationContext()," Dish Edited successfully ",Toast.LENGTH_SHORT).show();
             }
         });
