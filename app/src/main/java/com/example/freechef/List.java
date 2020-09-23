@@ -92,6 +92,7 @@ public class List extends AppCompatActivity {
             String price=d.getPrice();
             byte[]arr2=d.getImage();
             int id = dish.Returned_DishID(name , des , price );
+            i.putExtra("userid" ,user);
             i.putExtra("dishid" , id);
             i.putExtra("Name",name);
             i.putExtra("des",des);
@@ -104,6 +105,9 @@ public class List extends AppCompatActivity {
         {
             dish.DeleteDish(user , Name,Des,Price);
             Toast.makeText(getApplicationContext(),"Dish Deleted Successfully!",Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(List.this , Dishes_Menu.class);
+            i.putExtra("ID", user);
+            startActivity(i);
             return true;
         }
         return false;

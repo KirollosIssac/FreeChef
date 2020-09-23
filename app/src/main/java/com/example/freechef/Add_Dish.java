@@ -69,6 +69,9 @@ public class Add_Dish extends AppCompatActivity {
 
                     Dish.AddDishes(user ,name.getText().toString(),desc.getText().toString(),price.getText().toString(),"5",arr);
                     Toast.makeText(getApplicationContext()," Dish added successfully ",Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(Add_Dish.this , Dishes_Menu.class);
+                    i.putExtra("ID", user);
+                    startActivity(i);
                 }
                 else {
                     Toast.makeText(getApplicationContext()," Please fill spaces ",Toast.LENGTH_SHORT).show();

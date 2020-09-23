@@ -64,6 +64,9 @@ public class Edit_Dish extends AppCompatActivity {
                 String p=price.getText().toString();
                 database.Edit_Dish( dishid , getIntent().getExtras().getString("Name"),n,d,p,"5",arr);
                 Toast.makeText(getApplicationContext()," Dish Edited successfully ",Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(Edit_Dish.this , Dishes_Menu.class);
+                i.putExtra("ID", getIntent().getExtras().getString("userid"));
+                startActivity(i);
             }
         });
 
