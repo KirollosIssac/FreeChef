@@ -45,65 +45,26 @@ public class OrdersDatabase extends SQLiteOpenHelper {
     public void DeleteOrder(int id)
     {
         db=getWritableDatabase();
-        db.delete("orders","id'"+id+"'",null);
+        db.delete("orders","id='"+ id+"'",null);
         db.close();
     }
-    public Cursor ReturnOrderID (String userid) {
+
+    public int ReturnOrderID (String userid , String dishid) {
 
         db=getReadableDatabase();
-
-        String selectQuery = "SELECT id,dish from orders where touser = " + userid  ;
-        Cursor cursor = db.rawQuery(selectQuery, null);
-
-        if(cursor!=null)
-        {
-            cursor.moveToFirst();
-        }
+        Cursor cursor = FetchAllOrders();
         db.close();
-
-        return cursor;
-    }
-
-
-    /*public Cursor Return_to_user (String userid) {
-
-        db=getReadableDatabase();
-
-        String selectQuery = "SELECT fromuser,dish,quantity,Price from orders where touser = " + userid  ;
-        Cursor cursor = db.rawQuery(selectQuery, null);
-
-        if(cursor!=null)
-        {
-            cursor.moveToFirst();
-        }
-        Cursor filterd;
         while (!cursor.isAfterLast()){
-            if (cursor.getString(0).equals(userid)){
-                filterd.addrow
-
-            }
+                if(cursor.getString(1).equals(userid) && cursor.getString(2).equals(dishid))
+                {
+                    return Integer.parseInt(cursor.getString(0));
+                }
             cursor.moveToNext();
-        }
-        db.close();
-        return cursor;
-
-    }*/
-
-    public Cursor Return_to_chef (String chef_id) {
-
-        db=getReadableDatabase();
-
-        String selectQuery = "SELECT touser,dish,quantity,Price from orders where fromuser = " + chef_id;
-        Cursor cursor = db.rawQuery(selectQuery, null);
-
-        if(cursor!=null)
-        {
-            cursor.moveToFirst();
-        }
-        db.close();
-        return cursor;
-
+         }
+        return 0;
     }
+
+
     public Cursor FetchAllOrders()
     {
         db=getReadableDatabase();

@@ -63,7 +63,6 @@ public class UsersDatabase  extends SQLiteOpenHelper {
         db.close();
     }
 
-
     public Pair<Cursor,Cursor> Returnalluser () {
 
         db=getReadableDatabase();

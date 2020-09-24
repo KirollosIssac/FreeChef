@@ -30,13 +30,9 @@ public class Order_Details extends AppCompatActivity {
 
         final int DishID=Dishesdatabase.Returned_DishID( Name,Des,Price);
 
-
-
         final Cursor Order_selected = Ordersdatabase.FetchAllOrders();
 
         final Dish Dish_Selected = Dishesdatabase.Returndish_dishid(Name,Des,Price,arr);
-
-
 
 
         ImageView Dish_Image = (ImageView)findViewById(R.id.Dish_Image);
@@ -53,10 +49,10 @@ public class Order_Details extends AppCompatActivity {
 
         while(!(Order_selected.isAfterLast()))
         {
-            if( DishID==Integer.parseInt(Order_selected.getString(2)) && UserId.equals(Order_selected.getString(2)) )
+            if( DishID == Integer.parseInt(Order_selected.getString(2)) && UserId.equals(Order_selected.getString(1)) )
             {
-                Dish_Quantity.setText(Order_selected.getString(2));
-                Total_Price.setText(Order_selected.getString(3));
+                Dish_Quantity.setText(Order_selected.getString(4));
+                Total_Price.setText(Order_selected.getString(5));
                 break;
             }
             Order_selected.moveToNext();
@@ -64,25 +60,17 @@ public class Order_Details extends AppCompatActivity {
 
         Dish_Name.setText(Dish_Selected.getName());
         Dish_Description.setText(Dish_Selected.getDescription());
-        //Total_Price.setText(Order_selected.getPrice());
         Dish_Rate.setText(Dish_Selected.getRate());
-        //Dish_Quantity.setText(Order_selected.getQuantity());
 
         Delete_Order.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Cursor cursor=Ordersdatabase.ReturnOrderID(UserId);
-                int ID=0;
-                while(!(cursor.isAfterLast()))
-                {
-                    if(String.valueOf(DishID).equals(cursor.getString(1)))
-                    {
-                        ID=Integer.parseInt(cursor.getString(0));
-                    }
-                }
+                int ID =Ordersdatabase.ReturnOrderID (UserId , String.valueOf(DishID) );
+
                 Ordersdatabase.DeleteOrder(ID);
                 Toast.makeText(getApplicationContext(),"Order Deleted Successfully!",Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(Order_Details.this,User_Outcoming_Orders_History.class);
+                i.putExtra("ID",UserId);
                 startActivity(i);
             }
         });
@@ -90,7 +78,9 @@ public class Order_Details extends AppCompatActivity {
         View_Chef_Profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //moamen
+                Intent i = new Intent(Order_Details.this , Chef_Profile.class);
+                i.putExtra("chef_id", Dish_Selected.getUserid());
+                startActivity(i);
             }
         });
     }
