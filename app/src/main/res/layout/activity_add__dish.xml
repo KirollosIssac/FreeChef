@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/e"
     tools:context=".Add_Dish">
 
     <TextView
@@ -71,29 +72,29 @@
 
     <EditText
         android:id="@+id/dishname"
-        android:layout_width="214dp"
-        android:layout_height="38dp"
+        android:layout_width="213dp"
+        android:layout_height="48dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.771"
+        app:layout_constraintHorizontal_bias="0.767"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.388" />
+        app:layout_constraintVertical_bias="0.379" />
 
     <EditText
         android:id="@+id/description"
-        android:layout_width="345dp"
-        android:layout_height="39dp"
+        android:layout_width="340dp"
+        android:layout_height="53dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.409"
+        app:layout_constraintHorizontal_bias="0.38"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.595" />
+        app:layout_constraintVertical_bias="0.582" />
 
     <EditText
         android:id="@+id/price"
