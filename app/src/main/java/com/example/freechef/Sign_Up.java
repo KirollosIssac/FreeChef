@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Pair;
 import android.view.View;
@@ -68,6 +69,7 @@ public class Sign_Up extends AppCompatActivity {
                         if (check.first.getString(0).equals(username.getText().toString())) {
                             valid = false;
                             warn_username.setText("This Username is already used");
+                            warn_username.setBackgroundColor(Color.DKGRAY);
                             break;
                         }
                         check.first.moveToNext();
@@ -76,13 +78,15 @@ public class Sign_Up extends AppCompatActivity {
                         if (check.second.getString(0).equals(email.getText().toString())) {
                             valid = false;
                             warn_email.setText("This Email is already used");
+                            warn_email.setBackgroundColor(Color.DKGRAY);
                             break;
                         }
                         check.second.moveToNext();
                     }
                     if (password.getText().toString().length() < 6) {
                         valid = false;
-                        warn_pass.setText("This Password is to short");
+                        warn_pass.setText("This Password is too short");
+                        warn_pass.setBackgroundColor(Color.DKGRAY);
                     }
                     if (valid) {
                         Sign_Up.this.U.AddUser(firstname.getText().toString(),lastname.getText().toString(), username.getText().toString(),email.getText().toString(), password.getText().toString(),Gender.getSelectedItem().toString(), date.getText().toString(), phone.getText().toString());

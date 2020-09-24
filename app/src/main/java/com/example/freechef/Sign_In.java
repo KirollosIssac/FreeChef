@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -48,6 +49,7 @@ public class Sign_In extends AppCompatActivity {
 
                     if (!f) {
                         warn.setText("Invalid Username or Password");
+                        warn.setBackgroundColor(Color.DKGRAY);
                     }
                     if (f) {
                         Intent i = new Intent(Sign_In.this, Main_Menu.class);
