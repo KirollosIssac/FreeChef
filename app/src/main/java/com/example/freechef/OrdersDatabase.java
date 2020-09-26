@@ -10,7 +10,7 @@ import androidx.annotation.Nullable;
 
 public class OrdersDatabase extends SQLiteOpenHelper {
 
-    private static String Databasename = "OrdersDatabasee";
+    private static String Databasename = "Orders_Databasee";
     private String OrdersCreation="create table orders" + "( id integer primary key autoincrement," + "touser text not null , dish text not null, fromuser text not null , quantity text not null , Price text not null)";
     SQLiteDatabase db;
 

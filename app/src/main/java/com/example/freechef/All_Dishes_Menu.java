@@ -38,8 +38,10 @@ public class All_Dishes_Menu extends AppCompatActivity {
 
         while(!(cursor.isAfterLast()))
         {
-            byte[] photo=cursor.getBlob(6);
-            dishesList.add(new Dish(cursor.getString(1),cursor.getString(2),cursor.getString(3),cursor.getString(4),cursor.getString(5),photo));
+            if (! user.equals(cursor.getString(1))){
+                byte[] photo=cursor.getBlob(6);
+                dishesList.add(new Dish(cursor.getString(1),cursor.getString(2),cursor.getString(3),cursor.getString(4),cursor.getString(5),photo));
+            }
             cursor.moveToNext();
         }
 
@@ -78,7 +80,7 @@ public class All_Dishes_Menu extends AppCompatActivity {
     }
     public static byte[] getBitmapAsByteArray(Bitmap bitmap) {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.PNG, 0, outputStream);
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 0, outputStream);
         return outputStream.toByteArray();
     }
 }

@@ -70,12 +70,12 @@
         app:layout_constraintHorizontal_bias="0.08"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.685" />
+        app:layout_constraintVertical_bias="0.701" />
 
     <TextView
         android:id="@+id/Dish_Description"
-        android:layout_width="415dp"
-        android:layout_height="101dp"
+        android:layout_width="400dp"
+        android:layout_height="123dp"
         android:gravity="center"
         android:text="Italian Chicken Pizza with Pepsi "
         android:textSize="18sp"
@@ -84,7 +84,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.543" />
+        app:layout_constraintVertical_bias="0.554" />
 
     <ImageView
         android:id="@+id/Dish_Image"

@@ -11,7 +11,7 @@ import androidx.annotation.Nullable;
 
 public class UsersDatabase  extends SQLiteOpenHelper {
 
-    private static String Databasename = "UsersDatabase";
+    private static String Databasename = "Users_Database";
     private String UsersCreation="create table users" + "( id integer primary key autoincrement," + "firstname text not null , secondname text not null, username text not null , email text not null , password text not null , gender text not null ,dateofbirth text not null , phone text not null )";
     SQLiteDatabase db;
 

@@ -48,7 +48,8 @@ public class Sign_In extends AppCompatActivity {
                     }
 
                     if (!f) {
-                        warn.setText("Invalid Username or Password");
+
+                        warn.setText(" Invalid Username or Password ");
                         warn.setBackgroundColor(Color.DKGRAY);
                     }
                     if (f) {

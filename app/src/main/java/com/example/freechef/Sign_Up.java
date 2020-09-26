@@ -68,7 +68,7 @@ public class Sign_Up extends AppCompatActivity {
                     while (! check.first.isAfterLast()) {
                         if (check.first.getString(0).equals(username.getText().toString())) {
                             valid = false;
-                            warn_username.setText("This Username is already used");
+                            warn_username.setText(" This Username is already used ");
                             warn_username.setBackgroundColor(Color.DKGRAY);
                             break;
                         }
@@ -77,7 +77,7 @@ public class Sign_Up extends AppCompatActivity {
                     while (!check.second.isAfterLast()) {
                         if (check.second.getString(0).equals(email.getText().toString())) {
                             valid = false;
-                            warn_email.setText("This Email is already used");
+                            warn_email.setText("  This Email is already used ");
                             warn_email.setBackgroundColor(Color.DKGRAY);
                             break;
                         }
@@ -85,7 +85,7 @@ public class Sign_Up extends AppCompatActivity {
                     }
                     if (password.getText().toString().length() < 6) {
                         valid = false;
-                        warn_pass.setText("This Password is too short");
+                        warn_pass.setText(" This Password is too short ");
                         warn_pass.setBackgroundColor(Color.DKGRAY);
                     }
                     if (valid) {
